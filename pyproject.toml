@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "camelcalc"
+version = "0.1.0"
+description = "A Camel Up simulator and optimizer"
+authors = ["Armaan Tobaccowalla <armaan@tobaccowalla.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/ArmaanT/camelcalc"
+include = ["LICENSE", "CHANGELOG.md"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.812"
+black = "==19.10b0"
+flake8 = "^3.9.2"
+flake8-isort = "^4.0.0"
+isort = "^5.8.0"
+flake8-quotes = "^3.2.0"
+flake8-absolute-import = "^1.0"
+
+[tool.poetry.scripts]
+camelup = "camelcalc.play:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+lines_after_imports = 2
+known_first_party = "camelcalc"
