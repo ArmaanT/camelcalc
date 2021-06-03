@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "camelcalc"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Camel Up simulator and optimizer"
 authors = ["Armaan Tobaccowalla <armaan@tobaccowalla.com>"]
 license = "MIT"

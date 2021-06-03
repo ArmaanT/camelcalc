@@ -323,6 +323,9 @@ class Game:
         max_coins = max(map(lambda x: x.coins, self.teams.values()))
         self.winners = {t.name for t in self.teams.values() if t.coins == max_coins}
 
+        # Mark game as finished
+        self.playing = False
+
     def update_camel_positions(self, node: Node[Camel], new_pos: int) -> None:
         """
         Update camel position pointers after they move
@@ -352,7 +355,6 @@ class Game:
         new_pos = camel.pos + spots
         if spots > 0:
             if new_pos > BOARD_SPOTS:
-                # Winner is
                 self.move_camel(color, BOARD_SPOTS - camel.pos)
                 self.finish_game()
                 return
